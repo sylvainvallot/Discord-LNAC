@@ -71,7 +71,18 @@ async function saveCommandUsage(command){
     }
 }
 
+async function getCommandsUsage(){
+    const commandsUsed = await commands.find({
+        usage: {
+          $gte: 1
+        }
+      }).catch(console.error);
+    return commandsUsed;
+}
+
+
 module.exports = {
     saveCommandList,
     saveCommandUsage,
+    getCommandsUsage,
 }
