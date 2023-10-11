@@ -1,0 +1,32 @@
+{
+    "color": {
+          "debug": "#86CA3C",
+          "info": "#00B0F0",
+          "warn": "#FFC000",
+          "error": "#D9680D",
+          "fatal": "#FF0000",
+          "help": "#00AE86",
+          "palette" : {
+            "lightGreenishBlue" : "#55efc4",
+            "fadedPoster" : "#81ecec",
+            "greenDarnerTail": "#74b9ff",
+            "shyMoment": "#a29bfe",
+            "cityLights": "#dfe6e9",
+            "mintLeaf": "#00b894",
+            "robinsEggBlue": "#00cec9",
+            "electronBlue": "#0984e3",
+            "exodusFruit": "#6c5ce7",
+            "soothingBreeze": "#b2bec3",
+            "sourLemon": "#ffeaa7",
+            "firstDate": "#fab1a0",
+            "pinkGlamour": "#ff7675",
+            "pico8Pink": "#fd79a8",
+            "americanRiver": "#636e72",
+            "brightYarrow": "#fdcb6e",
+            "orangeVille": "#e17055",
+            "chiChong": "#d63031",
+            "prunusAvium": "#e84393",
+            "draculaOrchid": "#2d3436"
+          }
+    }
+}
