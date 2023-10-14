@@ -23,14 +23,14 @@ client.on('ready', async () => {
 	const total = users.size;
 	
 	let i = 1;
-	users.forEach((m) => {
+	await users.forEach((m) => {
 		if(!m.user.bot){
 			console.log(`Saving user ${i}/${total}`);
 			saveUser(m, 'JOIN');
 			i++;
 		}
 	});
-	console.log("DONE");
+	await console.log("DONE");
 });
 
 client.login(process.env.TOKEN);
