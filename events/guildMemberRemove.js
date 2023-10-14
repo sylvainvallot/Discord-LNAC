@@ -1,5 +1,6 @@
 require('dotenv').config()
 const { Events, EmbedBuilder, ActivityType } = require('discord.js');
+const { userLeft } = require('./../Database/utils/user.js');
 
 function timespan(date1, date2) {
         if (date1 > date2) { // swap
@@ -56,5 +57,6 @@ module.exports = {
         const channel = member.client.channels.cache.get(process.env.CHAN_ID_LOG_INOUT);
         channel.send({embeds: [embed]}).catch(console.error);
         member.client.user.setActivity(`${member.guild.memberCount} étudiant·es`, { type: ActivityType.Watching });
+        await userLeft(member);
 	},
 };

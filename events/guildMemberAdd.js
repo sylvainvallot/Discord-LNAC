@@ -1,5 +1,6 @@
 require('dotenv').config()
 const { Events, EmbedBuilder, ActivityType } = require('discord.js');
+const { userJoin } = require('./../Database/utils/user.js');
 
 module.exports = {
 	name: Events.GuildMemberAdd,
@@ -18,5 +19,6 @@ module.exports = {
         channel.send({embeds: [embed]}).catch(console.error);
         
         member.client.user.setActivity(`${member.guild.memberCount} étudiant·es`, { type: ActivityType.Watching });
-	},
+        await userJoin(member);
+        },
 };
