@@ -35,7 +35,8 @@ module.exports = {
                 .setRequired(true)
                 .addChoices(
                     { name: 'Système de remerciement', value: 'merci' },
-                )),
+        ))
+        .setDMPermission(false),        
 
 	async execute(interaction) {
         const type = interaction.options.getString('donnees');
