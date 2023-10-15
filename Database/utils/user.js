@@ -179,6 +179,37 @@ async function deleteProfile(guildMember){
 
 }
 
+function today(){
+	const now = new Date();
+	const month = String(now.getMonth()+1).padStart(2, '0');
+	const day = String(now.getDate()).padStart(2, '0')
+	return `${day}/${month}/`;
+}
+
+async function sendHappyBirthday(client){
+    const channel = await client.channels.cache.find(c => c.id === process.env.CHAN_ID_HOME).fetch();
+    const todayBirthday = await users_db.find({
+        birthday: { $regex: new RegExp(today(), 'i') }
+    }).catch(console.error)
+    if(todayBirthday.length === 0) return 0;
+    let userList = [];
+    for (const member of todayBirthday) {
+        userList.push(`<@${member.id}>`)
+    }
+    let message = '## :birthday: Joyeux Anniversaire à '
+    if(userList.length === 1){
+         message = message + userList[0] + " :champagne:";
+    } else if(userList.length < 3 && userList.length > 1){
+        message = message + userList[0] + " et à " + userList[1] + " :champagne:";
+    } else if (userList.length > 2){
+        const lastButNotLeast = userList[userList.length-1];
+        userList.pop()
+        message = message + userList.join(', à ') + " et à " + lastButNotLeast + " :champagne:";
+    } 
+    await channel.send({content: message});
+    return todayBirthday.length;
+}
+
 module.exports = {
     saveUser,
     userLeft,
@@ -189,4 +220,5 @@ module.exports = {
     saveCity,
     getUser,
     deleteProfile,
+    sendHappyBirthday,
 }
