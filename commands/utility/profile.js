@@ -92,7 +92,7 @@ module.exports = {
             if(type == 'city'){
                 const modal = new ModalBuilder()
 			        .setCustomId('city-modal')
-			        .setTitle('Quand est ta ville ?');
+			        .setTitle('Quelle est ta ville ?');
 
                 const cityInput = new TextInputBuilder()
                     .setCustomId('cityInput')
