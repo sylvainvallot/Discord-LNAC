@@ -15,6 +15,7 @@ module.exports = {
             option.setName('raison')
             .setDescription('Raison du signalement')
             .setMaxLength(1000)
+            .setRequired(true)
         )
         .setDMPermission(false),
 
@@ -35,7 +36,7 @@ module.exports = {
         }
 
         await interaction.reply({content: `Les licornes de l'équipe de modération sont en route avec leurs baguettes magiques pour faire régner l'ordre ! 🌈🦄✨`, ephemeral: true});
-        await reportChan.send({content: `**REPORT:** ${user} in ${channel}\nReason: ${reason}`})
+        await reportChan.send({content: `**REPORT by ${interaction.user}:** ${user} in ${channel}\nReason: ${reason}`})
 
 	}
 };
