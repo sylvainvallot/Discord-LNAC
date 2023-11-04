@@ -5,7 +5,7 @@ module.exports = {
 	permissions: "USER",
 	data: new SlashCommandBuilder()
 		.setName('orientation')
-		.setDescription('Aide pour la mise en forme du code sur Discord'),
+		.setDescription(`Un message d'aide pour demander de l'aide sur son orientation`),
 
 	async execute(interaction) {
         const embed1 = new EmbedBuilder()
