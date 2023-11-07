@@ -13,7 +13,7 @@ module.exports = {
         )
         .addStringOption(option =>
             option.setName('type')
-            .setDescription('Quels infractions ?')
+            .setDescription('Quelles infractions ?')
             .addChoices(
 				{ name: 'Message Privé', value: 'mp' },
                 { name: 'Proposition de rémunération ', value: 'money' },
