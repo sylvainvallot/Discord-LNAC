@@ -149,6 +149,13 @@ async function saveCity(guildMember, city){
     ).catch(console.error);
 }
 
+async function getCity(guildMember){
+    const user = await users_db.findOne({
+        id: guildMember.user.id,
+    }).catch(console.error) 
+    return user.city;
+}
+
 async function getUser(guildMember){
     const user = await users_db.findOne({
         id: guildMember.user.id,
@@ -221,4 +228,5 @@ module.exports = {
     getUser,
     deleteProfile,
     sendHappyBirthday,
+    getCity,
 }
