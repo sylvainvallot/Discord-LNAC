@@ -3,3 +3,5 @@
 thx_settings.json
 *.gif
 /ignore
+dev-index.js
+Database/ssh-tunnel.js
