@@ -12,7 +12,7 @@ module.exports = {
   permissions: "USER",
   data: new SlashCommandBuilder()
     .setName("rotate")
-    .setDescription("Pivoter une image")
+    .setDescription("Pivoter la dernière image envoyée dans le salon")
     .addNumberOption((option) =>
       option
         .setName("degres")
