@@ -70,6 +70,13 @@ module.exports = {
         .first();
     }
 
+    if (!imageMessage) {
+      return await interaction.reply({
+        content: "Pas d'image trouvée",
+        ephemeral: true,
+      });
+    }
+
     const image = imageMessage.attachments.first().contentType.includes("image")
       ? imageMessage.attachments.first().url
       : null;
