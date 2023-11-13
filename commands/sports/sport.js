@@ -7,7 +7,7 @@ module.exports = {
   permissions: "USER",
   data: new SlashCommandBuilder()
     .setName("sport")
-    .setDescription("Commandes pour ")
+    .setDescription("Commandes liées aux compétitions sportives")
     .addSubcommand((subcommand) =>
       subcommand
         .setName("classement")
