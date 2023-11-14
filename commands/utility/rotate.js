@@ -96,8 +96,8 @@ module.exports = {
     } else {
       rotation = degrees;
     }
-
+    interaction.deferReply();
     const rotatedImage = await rotateImg(image, rotation);
-    return await interaction.reply({ files: [rotatedImage] });
+    return await interaction.editReply({ files: [rotatedImage] });
   },
 };
