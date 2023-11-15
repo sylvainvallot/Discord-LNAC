@@ -3,7 +3,7 @@ const Jimp = require("jimp");
 
 async function rotateImg(url, degrees) {
   const image = await Jimp.read(url);
-  image.rotate(degrees);
+  image.rotate(-degrees);
   return await image.getBufferAsync(Jimp.MIME_PNG);
 }
 
