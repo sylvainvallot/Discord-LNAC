@@ -29,7 +29,7 @@ cleanChannel = async (channelID) => {
 }
 
 client.on('ready', async () => {
-	console.log('Starting to clean logs...');
+	console.log('Starting to auto clean channels...');
 
     const channelID = process.env.CHAN_ID_AUTOCLEAN.split(',');
     
