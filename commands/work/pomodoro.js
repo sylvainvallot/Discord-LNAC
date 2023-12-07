@@ -77,7 +77,7 @@ module.exports = {
                         .setDescription('Durée de la session de travail')
                         .setRequired(true)
                         .setMinValue(5)
-                        .setMaxValue(60)
+                        .setMaxValue(120)
                 )
                 .addIntegerOption(option =>
                     option.setName('temps-pause')
